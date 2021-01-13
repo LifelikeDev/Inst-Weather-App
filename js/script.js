@@ -1,11 +1,16 @@
 const form = document.querySelector('form');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
+const cardImage = document.querySelector('.time-img');
+const weatherImage = document.querySelector('.weather-icon');
 
 const updateInterface = (data) => {
 
     const cityDetails = data.cityDetails;
     const weatherDetails = data.weatherDetails;
+
+    // destructured properties
+// const { cityDetails, weatherDetails } = data ;
 
     details.innerHTML = `
         <h3>${cityDetails.EnglishName}</h3>
@@ -15,6 +20,16 @@ const updateInterface = (data) => {
             <span>&deg;C</span>
         </div>
     `;
+
+    const weatherIcon = `imgs/icons/${weatherDetails.WeatherIcon}.svg`;
+    weatherImage.setAttribute('src', weatherIcon);
+    let timeSource = null;
+
+    if (weatherDetails.IsDayTime === true) {
+        cardImage.setAttribute('src', `imgs/day.svg`);
+    } else {
+        cardImage.setAttribute('src', `imgs/night.svg`);
+    }
 
         // remove no display class if present
     if (card.classList.contains('no-display')) {
@@ -27,16 +42,18 @@ const updateInterface = (data) => {
 const updateCity = async (city) => {
         // insert user input city into getCity function from forecast.js
     const cityDetails = await getCity(city);
+
         // insert cityDetails.key into getWeather function from forecast.js
+
     const weatherDetails = await getWeather(cityDetails.Key);
-    console.log(cityDetails, weatherDetails);
+    // console.log(cityDetails, weatherDetails);
+
         // return city details and weather details
     return {
         cityDetails: cityDetails,
         weatherDetails: weatherDetails
     };
 
-    
         // shorthand object notation
     // return { cityDetails, weatherDetails };
 };
@@ -49,7 +66,12 @@ form.addEventListener('submit', e => {
     // get user input city details 
     const city = form.city.value.trim();
     // form.reset();
-    // console.log(city);
+
+    // alert user if no input is recorded and delete previous weather information
+    if (city === '' && card.classList.contains('no-display') === false) {
+        alert('You did not enter any city. Please enter the name of a city');
+        card.classList.add('no-display');
+    }
 
     // input into function to update city
     updateCity(city)

@@ -80,21 +80,35 @@ form .submitButton {
   margin: 2rem 1rem;
 }
 .details h3 {
+  color: #052a5a;
   font-size: 2.8rem;
+  letter-spacing: 1px;
 }
 .details h2 {
+  color: #052a5ad9;
   font-size: 1.9rem;
   margin: 1rem 0;
 }
 .details span {
-  font-size: 2.7rem;
+  font-size: 2.9rem;
   margin: 1rem 0;
+}
+.weather-icon {
+  border-radius: 50%;
+  background: #d0d0b2;
+  transform: translateY(-50%);
+  margin-bottom: -4rem;
 }
 .no-display {
   display: none;
 }
 
 /* Media Queries */
+@media (max-width: 548px) {
+  .weather-icon {
+    width: 30%;
+  }
+}
 
 @media (max-width: 411px) {
   .heading {
