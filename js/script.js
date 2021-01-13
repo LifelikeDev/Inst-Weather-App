@@ -23,13 +23,17 @@ const updateInterface = (data) => {
 
     const weatherIcon = `imgs/icons/${weatherDetails.WeatherIcon}.svg`;
     weatherImage.setAttribute('src', weatherIcon);
+    
     let timeSource = null;
 
     if (weatherDetails.IsDayTime === true) {
-        cardImage.setAttribute('src', `imgs/day.svg`);
+        timeSource = 'imgs/day.svg';
+        // cardImage.setAttribute('src', `imgs/day.svg`);
     } else {
-        cardImage.setAttribute('src', `imgs/night.svg`);
+        timeSource = 'imgs/night.svg';
+        // cardImage.setAttribute('src', `imgs/night.svg`);
     }
+    cardImage.setAttribute('src', timeSource);
 
         // remove no display class if present
     if (card.classList.contains('no-display')) {
@@ -78,4 +82,15 @@ form.addEventListener('submit', e => {
         .then(data => updateInterface(data))
         .catch(error => console.log(error));
 
+    // store user input value in local storage
+    localStorage.setItem('city', city);
+
 });
+
+    // check for existing local storage of city and use it to make an API call if present
+if(localStorage.getItem('city')) {
+
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateInterface(data))
+        .catch(error => console.log(error));
+}
