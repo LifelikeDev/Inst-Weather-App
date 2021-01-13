@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Inst-Weather App | Get Instant Weather Details of A Location</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="heading">Inst-Weather App.</h1>
+        <p class="sub-desc">Get the weather details of a location</p>
+
+        <form>
+            <label for="city">Type in the name of a city...</label><br>
+            <input class="textField" type="text" name="city" id="city"><br>
+            <input class="submitButton" type="submit" value="Get Weather!">
+        </form>
+
+        <div class="card no-display">
+            <div class="card-image">
+                <img src="https://via.placeholder.com/300x300" class="time-img card-img-top" alt="weather_img">
+            </div>
+            <div class="weather-icon">
+                <!-- weather icon -->
+            </div>
+            <div class="details">
+                <h3>Name of City</h3>
+                <h2>Weather Condition</h2>
+                <div class="details-sub">
+                    <span>Temperature</span>
+                    <span>&deg;C</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="js/forecast.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

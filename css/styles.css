@@ -1,0 +1,109 @@
+/* Universal Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+/* Body */
+
+body {
+  color: #052a5a;
+  background: #d0d0b2;
+}
+.container {
+  text-align: center;
+  width: 80%;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+}
+.heading {
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+}
+.sub-desc {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Form */
+
+form {
+  margin: 3rem;
+}
+form label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+form .textField {
+  margin: 1rem 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  max-width: 30rem;
+}
+form .submitButton {
+  font-size: 1.3rem;
+  padding: 0.8vmax 1.8vmax;
+  border-radius: 5px;
+  border: 1px solid #052a5a;
+  cursor: pointer;
+}
+
+/* Card */
+.card {
+  background: #f5f5dc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+  padding-bottom: 1%;
+  width: 80%;
+  max-width: 35rem;
+  margin: 0 auto;
+}
+.card-image {
+  width: 100%;
+}
+.card-image img {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  max-width: 35rem;
+}
+.details {
+  margin: 2rem 1rem;
+}
+.details h3 {
+  font-size: 2.8rem;
+}
+.details h2 {
+  font-size: 1.9rem;
+  margin: 1rem 0;
+}
+.details span {
+  font-size: 2.7rem;
+  margin: 1rem 0;
+}
+.no-display {
+  display: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 411px) {
+  .heading {
+    font-size: 3rem;
+  }
+  .sub-desc {
+    font-size: 1.7rem;
+  }
+  .card {
+    width: 100%;
+  }
+}
