@@ -3,6 +3,7 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const cardImage = document.querySelector('.time-img');
 const weatherImage = document.querySelector('.weather-icon');
+const forecast = new Forecast();
 
 const updateInterface = (data) => {
 
@@ -43,24 +44,24 @@ const updateInterface = (data) => {
 };
 
 
-const updateCity = async (city) => {
-        // insert user input city into getCity function from forecast.js
-    const cityDetails = await getCity(city);
+// const updateCity = async (city) => {
+//         // insert user input city into getCity function from forecast.js
+//     const cityDetails = await getCity(city);
 
-        // insert cityDetails.key into getWeather function from forecast.js
+//         // insert cityDetails.key into getWeather function from forecast.js
 
-    const weatherDetails = await getWeather(cityDetails.Key);
-    // console.log(cityDetails, weatherDetails);
+//     const weatherDetails = await getWeather(cityDetails.Key);
+//     // console.log(cityDetails, weatherDetails);
 
-        // return city details and weather details
-    return {
-        cityDetails: cityDetails,
-        weatherDetails: weatherDetails
-    };
+//         // return city details and weather details
+//     return {
+//         cityDetails: cityDetails,
+//         weatherDetails: weatherDetails
+//     };
 
-        // shorthand object notation
-    // return { cityDetails, weatherDetails };
-};
+//         // shorthand object notation
+//     // return { cityDetails, weatherDetails };
+// };
 
 
 form.addEventListener('submit', e => {
@@ -78,7 +79,7 @@ form.addEventListener('submit', e => {
     }
 
     // input into function to update city
-    updateCity(city)
+    forecast.updateCity(city)
         .then(data => updateInterface(data))
         .catch(error => console.log(error));
 
@@ -90,7 +91,7 @@ form.addEventListener('submit', e => {
     // check for existing local storage of city and use it to make an API call if present
 if(localStorage.getItem('city')) {
 
-    updateCity(localStorage.getItem('city'))
+    forecast.updateCity(localStorage.getItem('city'))
         .then(data => updateInterface(data))
         .catch(error => console.log(error));
 }
