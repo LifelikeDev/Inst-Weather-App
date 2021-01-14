@@ -4,8 +4,8 @@ class Forecast {
 
     constructor() {
         this.key = 'XE5ZN9oN8SWr5MHctHcIZIfmIs4NFG0u';
-        this.cityURI = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-        this.weatherURI = 'http://dataservice.accuweather.com/currentconditions/v1/';
+        this.cityURI = 'https://dataservice.accuweather.com/locations/v1/cities/search';
+        this.weatherURI = 'https://dataservice.accuweather.com/currentconditions/v1/';
     }
     async updateCity(city) {
            // insert user input city into getCity function from forecast.js

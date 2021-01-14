@@ -60,7 +60,7 @@ form .submitButton {
 
 /* Card */
 .card {
-  background: #f5f5dc;
+  background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
   padding-bottom: 1%;
