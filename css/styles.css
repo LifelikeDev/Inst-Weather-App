@@ -13,8 +13,15 @@ html {
 /* Body */
 
 body {
-  color: #052a5a;
-  background: #d0d0b2;
+  color: #fff;
+  background-image: linear-gradient(
+    76.3deg,
+    rgba(44, 62, 78, 1) 12.6%,
+    rgba(69, 103, 131, 1) 82.8%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 .container {
   text-align: center;
@@ -38,8 +45,8 @@ form {
 }
 form label {
   font-size: 1.5rem;
-  font-weight: 600;
-  opacity: 0.5;
+  font-weight: 500;
+  opacity: 0.8;
 }
 form .textField {
   margin: 1rem 0;
@@ -61,6 +68,7 @@ form .submitButton {
 /* Card */
 .card {
   background: #fff;
+  border: 0;
   border-radius: 8px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
   padding-bottom: 1%;
@@ -110,7 +118,7 @@ form .submitButton {
   }
 }
 
-@media (max-width: 411px) {
+@media (max-width: 420px) {
   .heading {
     font-size: 3rem;
   }
